@@ -1,4 +1,5 @@
 /*(function() {
+  'use strict';
   // Add app, add constant, set properties on rootscope in run     
   angular.module('myApp', ['myApp.core'])
     .run(['VERSION', '$rootScope',

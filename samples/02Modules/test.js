@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
   describe('my app module', function() {
     beforeEach(module('myApp'));
     beforeEach(module('myApp.core'));

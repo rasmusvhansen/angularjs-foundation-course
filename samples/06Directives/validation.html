@@ -26,6 +26,10 @@
       <input type="text" name="color" is-blue ng-model="color">
       <p class="error" ng-if="myForm.color.$error.isBlue">It is NOT blue - please fix!</p>
     </div>
+    {{myForm}}
+    <button type="submit" ng-disabled="myForm.$invalid">
+      Submit
+    </button>
   </form>
 
 </body>

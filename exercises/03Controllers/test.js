@@ -1,23 +1,54 @@
 (function() {
   'use strict';
-  describe('MainController', function() {
-    var controller;
+  describe('VideoListController', function() {
+    var controller,
+        httpBackend;
     beforeEach(module('myApp'));
     
-    beforeEach(inject(function ($controller) {
-      controller = $controller('MainController');    
+    beforeEach(inject(function ($controller, $httpBackend) {
+      httpBackend = $httpBackend; 
+      controller = $controller('VideoListController');
+      httpBackend.expectGET(/.*q=Rick Astley.*/).respond({items: []});
+      httpBackend.flush();
     }));
     
-    it('should have some info', function () {
-      expect(controller.info).toBe('This is some info')
+    it('should query for Rick Astley by default', function () {
+      expect(controller.query).toBe('Rick Astley')
+      
+      httpBackend.expectGET(/.*q=Rick Astley.*/).respond({items: []});
+      controller.search();
+      httpBackend.flush();
     });
     
-    it('should rotate 5 degrees for each character', function () {
-      controller.text = 'abc';
-      expect(controller.rotation()).toBe(15);
+    it('should query for user specified term', function () {
+      controller.query = 'Angular';
       
-      controller.text = 'abcdef';
-      expect(controller.rotation()).toBe(30);
-    });    
+      httpBackend.expectGET(/.*q=Angular.*/).respond({items: []});
+      controller.search();
+      httpBackend.flush();
+    });
+    
+    it('should map items to proper structure', function () {
+      httpBackend.expectGET(/.*q=Rick Astley.*/).respond(
+        {items: [
+          {
+            id: {videoId: 'vidId'},
+            snippet: {
+              title: 'vidTitle',
+              description: 'vidDescription',
+              thumbnails: {
+                medium: {
+                  url: 'thumbUrl'
+                }
+              }
+            }
+          }
+        ]});
+      controller.search();
+      httpBackend.flush();      
+      
+      // TODO: verify that ctrl.videos looks as expected given this reply from $http
+    })
+        
   });
 })();

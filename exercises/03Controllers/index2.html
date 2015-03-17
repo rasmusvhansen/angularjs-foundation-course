@@ -33,17 +33,17 @@
 <body ng-app="myApp">
   <div ng-controller="VideoListController as vidList"> 
     <div>
-      <!-- 3. Create an input field that binds to vidList.query -->
-      <!-- 4. Create a submit button that calls vidList.search() -->
+      <form ng-submit="vidList.search()">        
+        <input type="text" ng-model="vidList.query">
+        <input type="submit" value="Search">        
+      </form>
     </div>
-    
-    <!-- 1. repeat this div for each video in vidList.videos -->
-    <!-- 2. populate Title, link, image, description -->
-    <div class="video">
-      <p>This should be the title</p>
-      <a href=""><img src="https://www.google.dk/images/srpr/logo11w.png"></a>
-      <p>This should be the description</p>
+    <div class="video" ng-repeat="v in vidList.videos">
+      <p>{{v.title}}</p>
+      <a ng-href="{{v.link}}"><img ng-src="{{v.thumb}}"></a>
+      <p>{{v.description}}</p>
     </div> 
   </div>
 </body>
+
 </html>

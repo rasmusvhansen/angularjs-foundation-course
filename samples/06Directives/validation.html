@@ -5,7 +5,7 @@
   <title>06</title>
   <script src="..\..\node_modules\angular\angular.js"></script>
   <script src="..\..\node_modules\angular-ui-router\release\angular-ui-router.js"></script>
-  <script src="validation.js"></script>
+  <script src="scripts\validation.js"></script>
   <style>
     .error {
       color: red;
@@ -26,7 +26,7 @@
       <input type="text" name="color" is-blue ng-model="color">
       <p class="error" ng-if="myForm.color.$error.isBlue">It is NOT blue - please fix!</p>
     </div>
-    {{myForm}}
+    <!--{{myForm}}-->
     <button type="submit" ng-disabled="myForm.$invalid">
       Submit
     </button>

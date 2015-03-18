@@ -7,3 +7,5 @@
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 * http://www.angularjshub.com/
 * https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make
+* http://egghead.io/
+* http://www.yearofmoo.com/

@@ -18,12 +18,12 @@
     
 
     <div>
-      <input type="text" name="chars" ng-model="chars" ng-pattern="/^[A-Za-z0-9]{4,8}$/">
+      <input type="text" name="chars" ng-model="chars" ng-pattern="/^[A-Za-z0-9]{4,8}$/" placeholder="4-8 chars letters and numbers">
       <p class="error" ng-show="myForm.chars.$error.pattern">4-8 letters and numbers please</p>
     </div>
     
     <div>
-      <input type="text" name="color" is-blue ng-model="color">
+      <input type="text" name="color" is-blue ng-model="color" placeholder="Make it blue">
       <p class="error" ng-if="myForm.color.$error.isBlue">It is NOT blue - please fix!</p>
     </div>
     <!--{{myForm}}-->

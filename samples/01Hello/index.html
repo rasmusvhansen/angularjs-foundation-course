@@ -6,10 +6,15 @@
   <script src="..\..\node_modules\angular\angular.js"></script>
 </head>
 
-<body ng-app ng-init="">
+<body ng-app ng-init="a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]">
 
   <input ng-model="m">
-  <p>{{m + ' you!'}}</p>
+  <p>{{a}}</p>
+  
+  <input ng-model="q">
+  <ul>
+    <li ng-repeat="item in a | filter:q">{{item}}</li>
+  </ul>
 
 
 

@@ -9,3 +9,5 @@
 * https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make
 * http://egghead.io/
 * http://www.yearofmoo.com/
+* https://prezi.com/frrxriqn8jge/angularjs-foundation-course/
+* https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek

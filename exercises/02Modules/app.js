@@ -1,5 +1,5 @@
 (function () {
-  'use strict';
+  'use strict';  
   // 1. Create a module called myApp.core which exposes a version constant 'VERSION'
   // 2. Create a module called myApp.app which depends on myApp.core
   // 3. Create a run function on this module, which injects '$rootScope' and 'VERSION'

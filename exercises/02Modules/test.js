@@ -30,8 +30,8 @@
     });
     
     it('should expose todays date on rootScope', function() {
-      expect($rootScope.today).toBeDefined();
-      expect($rootScope.today instanceof Date).toBeTrue();
+      expect($rootScope.todaysDate).toBeDefined();
+      expect($rootScope.todaysDate instanceof Date).toBe(true);
     });
     
     describe('is before noon', function() {
@@ -43,12 +43,12 @@
       
       it('should return true before noon', function() {
         $rootScope.todaysDate = new Date(2015, 02, 19, 08);        
-        expect($rootScope.isBeforeNoon()).toBeFalse();
+        expect($rootScope.isBeforeNoon()).toBe(true);
       });
       
       it('should return false after noon', function() {
         $rootScope.todaysDate = new Date(2015, 02, 19, 16);        
-        expect($rootScope.isBeforeNoon()).toBeFalse();
+        expect($rootScope.isBeforeNoon()).toBe(false);
       });
     });
   });

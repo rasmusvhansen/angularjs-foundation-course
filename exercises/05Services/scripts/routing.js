@@ -2,7 +2,7 @@
   angular.module('myApp')
   .config(function($stateProvider, $urlRouterProvider) {
     //
-    // For any unmatched url, redirect to /state1
+    // For any unmatched url, redirect to /video
     $urlRouterProvider.otherwise("/video");
     //
     // Now set up the states

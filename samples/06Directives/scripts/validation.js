@@ -5,7 +5,7 @@
       link: function(scope, elm, attrs, ctrl) {
         ctrl.$validators.isBlue = function(modelValue, viewValue) {
           
-          return !modelValue || (modelValue && modelValue === 'blue');
+          return !modelValue || modelValue === 'blue';
         };
       }
     };

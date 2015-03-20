@@ -16,17 +16,20 @@
       templateUrl: "templates/state1.list.html",
       resolve: {
         videos: function($http, $stateParams) {
-          return $http.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&q=' + $stateParams.query + '&key=AIzaSyD4YJITOWdfQdFbcxHc6TgeCKmVS9yRuQ8').then(function(res) {
-            return res.data.items.map(function(v) {
-              var snip = v.snippet;
-              return {
-                title: snip.title,
-                description: snip.description,
-                thumb: snip.thumbnails.medium.url,
-                link: 'https://www.youtube.com/watch?v=' + v.id.videoId
-              };
+          
+          // http://survivejs.com/common_problems/pyramid.html          
+          return $http.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&q=' + $stateParams.query + '&key=AIzaSyD4YJITOWdfQdFbcxHc6TgeCKmVS9yRuQ8')
+            .then(function(res) {
+              return res.data.items.map(function(v) {
+                var snip = v.snippet;
+                return {
+                  title: snip.title,
+                  description: snip.description,
+                  thumb: snip.thumbnails.medium.url,
+                  link: 'https://www.youtube.com/watch?v=' + v.id.videoId
+                };
+              });
             });
-          });
         }
       },
       controller: 'ListOneController as list'

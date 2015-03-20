@@ -47,6 +47,8 @@
       controller.search();
       httpBackend.flush();      
       
+      expect(controller.videos.length).toBe(1);
+      
       // TODO: verify that ctrl.videos looks as expected given this reply from $http
     })
         

@@ -1,6 +1,9 @@
 /*(function () {
   angular.module('myApp')
   .config(function($stateProvider, $urlRouterProvider) {
+    
+    
+
     //
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/video");
@@ -18,9 +21,14 @@
       resolve: {
         videos: function(videoService, $stateParams) {
           return videoService.getVideos($stateParams.query);
-        }
+        },
+        andet: function () { return 'hest'; }
       },
       controller: 'VideoListController as list'
     });    
+  })
+  
+  .run(function ($rootScope, $log) {
+    $rootScope.$on('$stateChangeError', $log.info); 
   })
 })();*/

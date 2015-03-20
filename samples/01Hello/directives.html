@@ -170,7 +170,7 @@
         <select ng-model="age" ng-options="age as age group by groupAge(age) for age in generateAges()">
         </select>
       </div>
-      <input type="submit" />
+      <input type="submit" ng-disabled="myForm.$invalid" />
     </form>
   </section>
 

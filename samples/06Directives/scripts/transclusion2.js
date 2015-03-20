@@ -1,4 +1,4 @@
-/*(function() {
+(function() {
   angular.module('myApp', []).directive('myFrame', function() {
     return {
       scope: {},
@@ -10,4 +10,4 @@
       }
     };
   });
-})();*/
+})();

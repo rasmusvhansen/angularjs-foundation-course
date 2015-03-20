@@ -43,7 +43,7 @@
       
       it('should return true before noon', function() {
         $rootScope.todaysDate = new Date(2015, 02, 19, 08);        
-        expect($rootScope.isBeforeNoon()).toBe(false);
+        expect($rootScope.isBeforeNoon()).toBe(true);
       });
       
       it('should return false after noon', function() {

@@ -2,8 +2,9 @@
   'use strict';
   angular.module('myApp', ['ui.router'])
   
-  .controller('VideoListController', function(videos) {
+  .controller('VideoListController', function(videos, andet) {
     this.items = videos;
+    this.andet = andet;
   })
   
   .controller('SearchController', function($state) {

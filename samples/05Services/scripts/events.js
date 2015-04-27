@@ -18,5 +18,5 @@
 })();
 
 // events should be used sparingly. If there are a lot of events in a system, it can be difficult to reason about what is going on
-// services another way of communicating between controllers is to use a service that both controllers depend on.
+// another way of communicating between controllers is to use a service that both controllers depend on.
 // broadcast goes up, emit goes down. 

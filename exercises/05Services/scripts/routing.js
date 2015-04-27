@@ -24,4 +24,7 @@
       controller: 'VideoListController as list'
     });    
   })
+  .run(function ($rootScope, $log) {
+    $rootScope.$on('$stateChangeError', $log.info); 
+  })
 })();
